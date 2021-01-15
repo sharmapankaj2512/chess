@@ -8,6 +8,6 @@ class Bishop(board: Board) {
     }
 
     fun nextMoves(): Set<Position> {
-        return current.leftDiagonal()
+        return (current.leftDiagonal() + current.rightDiagonal()).toSet()
     }
 }

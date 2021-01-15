@@ -48,8 +48,15 @@ data class Position(val row: Char, val column: Int) {
     fun leftDiagonal(): Set<Position> {
         val downwards = generateSequence(this) { it.bottomLeft() }
         val upwards = generateSequence(this) { it.topRight() }
-        val leftDiagonal = upwards + downwards
-        return leftDiagonal.takeWhile { valid(it) }.toSet()
+        val diagonal = upwards + downwards
+        return diagonal.takeWhile { valid(it) }.toSet()
+    }
+
+    fun rightDiagonal(): Set<Position> {
+        val downwards = generateSequence(this) { it.bottomRight() }
+        val upwards = generateSequence(this) { it.topLeft() }
+        val diagonal = upwards + downwards
+        return diagonal.takeWhile { valid(it) }.toSet()
     }
 
     private fun make(nextRow: Char, nextColumn: Int): Position? {
