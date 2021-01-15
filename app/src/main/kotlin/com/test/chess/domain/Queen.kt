@@ -1,5 +1,10 @@
 package com.test.chess.domain
 
+import com.test.chess.extensions.column
+import com.test.chess.extensions.leftDiagonal
+import com.test.chess.extensions.rightDiagonal
+import com.test.chess.extensions.row
+
 class Queen(board: Board) {
     private lateinit var current: Position
 
@@ -8,6 +13,9 @@ class Queen(board: Board) {
     }
 
     fun nextMoves(): Set<Position> {
-        return (current.row() + current.column() + current.leftDiagonal() + current.rightDiagonal()).toSet()
+        return (current.row() +
+                current.column() +
+                current.leftDiagonal() +
+                current.rightDiagonal()).toSet()
     }
 }
