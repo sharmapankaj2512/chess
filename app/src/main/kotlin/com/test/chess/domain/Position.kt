@@ -12,7 +12,9 @@ data class Position(val row: Char, val column: Int) {
     }
 
     fun aboveToRight(): Position? {
-        return Position(row + 1, column + 1)
+        val nextRow = row + 1
+        val nextColumn = column + 1
+        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
     }
 
     private fun valid(row: Char, column: Int): Boolean {
@@ -23,6 +25,6 @@ data class Position(val row: Char, val column: Int) {
         const val START_ROW = 'A'
         const val END_ROW = 'Z'
         const val START_CELL = 1
-        const val END_CELL = 2
+        const val END_CELL = 8
     }
 }
