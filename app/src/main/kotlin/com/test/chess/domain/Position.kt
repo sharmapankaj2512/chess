@@ -19,6 +19,12 @@ data class Position(val row: Char, val column: Int) {
         return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
     }
 
+    fun right(): Position? {
+        val nextRow = row
+        val nextColumn = column + 1
+        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+    }
+
     private fun valid(row: Char, column: Int): Boolean {
         return row in START_ROW..END_ROW && column in START_CELL..END_CELL
     }

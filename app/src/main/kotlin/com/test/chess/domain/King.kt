@@ -1,6 +1,6 @@
 package com.test.chess.domain
 
-class Pawn(private val board: Board): Piece {
+class King(board: Board) : Piece {
     private lateinit var current: Position
 
     fun placeAt(position: Position) {
@@ -8,8 +8,10 @@ class Pawn(private val board: Board): Piece {
     }
 
     override fun nextMoves(): Set<Position> {
-        return listOfNotNull(current.above(),
-                current.aboveToLeft(),
-                current.aboveToRight()).toSet()
+        return listOfNotNull(
+                current.above(),
+                current.right(),
+                current.aboveToRight()
+        ).toSet()
     }
 }
