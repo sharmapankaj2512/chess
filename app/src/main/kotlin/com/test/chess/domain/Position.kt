@@ -2,7 +2,9 @@ package com.test.chess.domain
 
 data class Position(val row: Char, val column: Int) {
     fun above(): Position? {
-        return Position(row + 1, column)
+        val nextRow = row + 1
+        val nextColumn = column
+        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
     }
 
     fun aboveToLeft(): Position? {
@@ -23,7 +25,7 @@ data class Position(val row: Char, val column: Int) {
 
     companion object {
         const val START_ROW = 'A'
-        const val END_ROW = 'Z'
+        const val END_ROW = 'H'
         const val START_CELL = 1
         const val END_CELL = 8
     }
