@@ -123,5 +123,39 @@ class HorseTest {
                 }
             }
         }
+
+        @Nested
+        @DisplayName("AND a Horse at E3")
+        inner class AndAHorseAtE3 {
+            private val horse = Horse(board)
+
+            @BeforeEach
+            fun beforeEach() {
+                horse.placeAt(Position('E', 3))
+            }
+
+            @Nested
+            @DisplayName("WHEN next moves are requested")
+            inner class WhenNextMovesAreRequested {
+
+                @Test
+                @DisplayName("THEN it should return [F1, D1, C2, G2, G4, C4, F5, D5]")
+                fun thenItShouldReturnPositions() {
+                    assertEquals(
+                            setOf(
+                                    Position('F', 1),
+                                    Position('D', 1),
+                                    Position('C', 2),
+                                    Position('G', 2),
+                                    Position('G', 4),
+                                    Position('C', 4),
+                                    Position('F', 5),
+                                    Position('D', 5),
+                            ),
+                            horse.nextMoves()
+                    )
+                }
+            }
+        }
     }
 }
