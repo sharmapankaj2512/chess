@@ -225,5 +225,36 @@ class KingTest {
                 }
             }
         }
+
+        @Nested
+        @DisplayName("AND a King at H4")
+        inner class AndAPawnAtH4 {
+            private val king = King(board)
+
+            @BeforeEach
+            fun beforeEach() {
+                king.placeAt(Position('H', 4))
+            }
+
+            @Nested
+            @DisplayName("WHEN next moves are requested")
+            inner class WhenNextMovesAreRequested {
+
+                @Test
+                @DisplayName("THEN it should return [H3, G3, G4, G5, H5]")
+                fun thenItShouldReturnPositions() {
+                    Assertions.assertEquals(
+                            setOf(
+                                    Position('H', 3),
+                                    Position('G', 3),
+                                    Position('G', 4),
+                                    Position('G', 5),
+                                    Position('H', 5),
+                            ),
+                            king.nextMoves()
+                    )
+                }
+            }
+        }
     }
 }
