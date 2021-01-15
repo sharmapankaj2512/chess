@@ -14,7 +14,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at A1")
-        inner class AndAPawnAtA1 {
+        inner class AndAKingAtA1 {
             private val king = King(board)
 
             @BeforeEach
@@ -43,7 +43,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at A5")
-        inner class AndAPawnAtA5 {
+        inner class AndAKingAtA5 {
             private val king = King(board)
 
             @BeforeEach
@@ -74,7 +74,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at A8")
-        inner class AndAPawnAtA8 {
+        inner class AndAKingAtA8 {
             private val king = King(board)
 
             @BeforeEach
@@ -103,7 +103,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at D1")
-        inner class AndAPawnAtD1 {
+        inner class AndAKingAtD1 {
             private val king = King(board)
 
             @BeforeEach
@@ -134,7 +134,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at D4")
-        inner class AndAPawnAtD4 {
+        inner class AndAKingAtD4 {
             private val king = King(board)
 
             @BeforeEach
@@ -168,7 +168,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at D8")
-        inner class AndAPawnAtD8 {
+        inner class AndAKingAtD8 {
             private val king = King(board)
 
             @BeforeEach
@@ -199,7 +199,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at H1")
-        inner class AndAPawnAtH1 {
+        inner class AndAKingAtH1 {
             private val king = King(board)
 
             @BeforeEach
@@ -228,7 +228,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at H4")
-        inner class AndAPawnAtH4 {
+        inner class AndAKingAtH4 {
             private val king = King(board)
 
             @BeforeEach
@@ -259,7 +259,7 @@ class KingTest {
 
         @Nested
         @DisplayName("AND a King at H8")
-        inner class AndAPawnAtH8 {
+        inner class AndAKingAtH8 {
             private val king = King(board)
 
             @BeforeEach

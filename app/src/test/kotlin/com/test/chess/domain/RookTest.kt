@@ -14,7 +14,7 @@ class RookTest {
 
         @Nested
         @DisplayName("AND a Rook at A1")
-        inner class AndAPawnAtA1 {
+        inner class AndARookAtA1 {
             private val rook = Rook(board)
 
             @BeforeEach
