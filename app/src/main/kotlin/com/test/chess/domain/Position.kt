@@ -41,6 +41,18 @@ data class Position(val row: Char, val column: Int) {
         return row in START_ROW..END_ROW && column in START_CELL..END_CELL
     }
 
+    fun row(): Set<Position> {
+        return (START_CELL..END_CELL)
+                .map { column -> Position(row, column) }
+                .toSet()
+    }
+
+    fun column(): Set<Position> {
+        return (START_ROW..END_ROW)
+                .map { row -> Position(row, column) }
+                .toSet()
+    }
+
     companion object {
         const val START_ROW = 'A'
         const val END_ROW = 'H'
