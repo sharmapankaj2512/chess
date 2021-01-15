@@ -28,7 +28,7 @@ class KingTest {
 
                 @Test
                 @DisplayName("THEN it should return [A2, B1, B2]")
-                fun thenItShouldReturnC1C2C3() {
+                fun thenItShouldReturnPositions() {
                     Assertions.assertEquals(
                             setOf(
                                     Position('B', 1),
@@ -57,7 +57,7 @@ class KingTest {
 
                 @Test
                 @DisplayName("THEN it should return [A4, A6, B4, B5, B6]")
-                fun thenItShouldReturnC1C2C3() {
+                fun thenItShouldReturnPositions() {
                     Assertions.assertEquals(
                             setOf(
                                     Position('A', 4),
@@ -88,12 +88,43 @@ class KingTest {
 
                 @Test
                 @DisplayName("THEN it should return [A7, B7, B8]")
-                fun thenItShouldReturnC1C2C3() {
+                fun thenItShouldReturnPositions() {
                     Assertions.assertEquals(
                             setOf(
                                     Position('A', 7),
                                     Position('B', 7),
                                     Position('B', 8),
+                            ),
+                            king.nextMoves()
+                    )
+                }
+            }
+        }
+
+        @Nested
+        @DisplayName("AND a King at D1")
+        inner class AndAPawnAtD1 {
+            private val king = King(board)
+
+            @BeforeEach
+            fun beforeEach() {
+                king.placeAt(Position('D', 1))
+            }
+
+            @Nested
+            @DisplayName("WHEN next moves are requested")
+            inner class WhenNextMovesAreRequested {
+
+                @Test
+                @DisplayName("THEN it should return [E1, E2, D2, C1, C2]")
+                fun thenItShouldReturnPositions() {
+                    Assertions.assertEquals(
+                            setOf(
+                                    Position('E', 1),
+                                    Position('E', 2),
+                                    Position('D', 2),
+                                    Position('C', 1),
+                                    Position('C', 2),
                             ),
                             king.nextMoves()
                     )
