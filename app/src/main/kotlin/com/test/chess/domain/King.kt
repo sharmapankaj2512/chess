@@ -16,6 +16,7 @@ class King(board: Board) : Piece {
                 current.topRight(),
                 current.topLeft(),
                 current.bottomRight(),
+                current.bottomLeft(),
         ).toSet()
     }
 }
