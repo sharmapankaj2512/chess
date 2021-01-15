@@ -2,50 +2,38 @@ package com.test.chess.domain
 
 data class Position(val row: Char, val column: Int) {
     fun top(): Position? {
-        val nextRow = row + 1
-        val nextColumn = column
-        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+        return make(row + 1, column)
     }
 
     fun topLeft(): Position? {
-        val nextRow = row + 1
-        val nextColumn = column - 1
-        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+        return make(row + 1, column - 1)
     }
 
     fun topRight(): Position? {
-        val nextRow = row + 1
-        val nextColumn = column + 1
-        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+        return make(row + 1, column + 1)
     }
 
     fun left(): Position? {
-        val nextRow = row
-        val nextColumn = column - 1
-        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+        return make(row, column - 1)
     }
 
     fun right(): Position? {
-        val nextRow = row
-        val nextColumn = column + 1
-        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+        return make(row, column + 1)
     }
 
     fun bottom(): Position? {
-        val nextRow = row - 1
-        val nextColumn = column
-        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+        return make(row - 1, column)
     }
 
     fun bottomRight(): Position? {
-        val nextRow = row - 1
-        val nextColumn = column + 1
-        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+        return make(row - 1, column + 1)
     }
 
     fun bottomLeft(): Position? {
-        val nextRow = row - 1
-        val nextColumn = column - 1
+        return make(row - 1, column - 1)
+    }
+
+    private fun make(nextRow: Char, nextColumn: Int): Position? {
         return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
     }
 
