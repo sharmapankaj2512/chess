@@ -14,7 +14,9 @@ class Horse(board: Board) : Piece {
                 current.top()?.top()?.left(),
                 current.left()?.left()?.top(),
                 current.bottom()?.bottom()?.right(),
-                current.right()?.right()?.bottom()
+                current.right()?.right()?.bottom(),
+                current.bottom()?.bottom()?.left(),
+                current.left()?.left()?.bottom()
         ).toSet()
     }
 }
