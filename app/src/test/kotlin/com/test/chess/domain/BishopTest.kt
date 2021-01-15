@@ -155,5 +155,39 @@ class BishopTest {
                 }
             }
         }
+
+        @Nested
+        @DisplayName("AND a Bishop at H1")
+        inner class AndABishopAtH1 {
+            private val bishop = Bishop(board)
+
+            @BeforeEach
+            fun beforeEach() {
+                bishop.placeAt(Position('H', 1))
+            }
+
+            @Nested
+            @DisplayName("WHEN next moves are requested")
+            inner class WhenNextMovesAreRequested {
+
+                @Test
+                @DisplayName("THEN it should return [H1, G2, F3, E4, D5, C6, B7, A8]")
+                fun thenItShouldReturnPositions() {
+                    Assertions.assertEquals(
+                            setOf(
+                                    Position('A', 8),
+                                    Position('B', 7),
+                                    Position('C', 6),
+                                    Position('D', 5),
+                                    Position('E', 4),
+                                    Position('F', 3),
+                                    Position('G', 2),
+                                    Position('H', 1),
+                            ),
+                            bishop.nextMoves()
+                    )
+                }
+            }
+        }
     }
 }
