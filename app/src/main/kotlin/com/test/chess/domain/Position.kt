@@ -19,6 +19,12 @@ data class Position(val row: Char, val column: Int) {
         return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
     }
 
+    fun left(): Position? {
+        val nextRow = row
+        val nextColumn = column - 1
+        return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
+    }
+
     fun right(): Position? {
         val nextRow = row
         val nextColumn = column + 1

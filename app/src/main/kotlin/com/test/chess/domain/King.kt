@@ -11,7 +11,9 @@ class King(board: Board) : Piece {
         return listOfNotNull(
                 current.top(),
                 current.right(),
-                current.topRight()
+                current.left(),
+                current.topRight(),
+                current.topLeft()
         ).toSet()
     }
 }
