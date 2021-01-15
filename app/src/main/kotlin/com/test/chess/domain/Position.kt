@@ -1,19 +1,19 @@
 package com.test.chess.domain
 
 data class Position(val row: Char, val column: Int) {
-    fun above(): Position? {
+    fun top(): Position? {
         val nextRow = row + 1
         val nextColumn = column
         return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
     }
 
-    fun aboveToLeft(): Position? {
+    fun topLeft(): Position? {
         val nextRow = row + 1
         val nextColumn = column - 1
         return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null
     }
 
-    fun aboveToRight(): Position? {
+    fun topRight(): Position? {
         val nextRow = row + 1
         val nextColumn = column + 1
         return if (valid(nextRow, nextColumn)) Position(nextRow, nextColumn) else null

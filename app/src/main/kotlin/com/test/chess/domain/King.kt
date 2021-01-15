@@ -9,9 +9,9 @@ class King(board: Board) : Piece {
 
     override fun nextMoves(): Set<Position> {
         return listOfNotNull(
-                current.above(),
+                current.top(),
                 current.right(),
-                current.aboveToRight()
+                current.topRight()
         ).toSet()
     }
 }

@@ -8,8 +8,8 @@ class Pawn(private val board: Board): Piece {
     }
 
     override fun nextMoves(): Set<Position> {
-        return listOfNotNull(current.above(),
-                current.aboveToLeft(),
-                current.aboveToRight()).toSet()
+        return listOfNotNull(current.top(),
+                current.topLeft(),
+                current.topRight()).toSet()
     }
 }
