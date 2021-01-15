@@ -12,7 +12,9 @@ class Horse(board: Board) : Piece {
                 current.top()?.top()?.right(),
                 current.right()?.right()?.top(),
                 current.top()?.top()?.left(),
-                current.left()?.left()?.top()
+                current.left()?.left()?.top(),
+                current.bottom()?.bottom()?.right(),
+                current.right()?.right()?.bottom()
         ).toSet()
     }
 }
