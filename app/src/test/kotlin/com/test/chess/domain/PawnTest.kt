@@ -39,4 +39,32 @@ class GivenEmptyChessBoard {
             }
         }
     }
+
+    @Nested
+    @DisplayName("AND a pawn at B1")
+    inner class AndAPawnAtB1 {
+        private val pawn = Pawn(board)
+
+        @BeforeEach
+        fun beforeEach() {
+            pawn.placeAt(Position('B', 1))
+        }
+
+        @Nested
+        @DisplayName("WHEN next moves of the pawn are requested")
+        inner class WhenNextMovesAreRequested {
+
+            @Test
+            @DisplayName("THEN it should return [C1, C2]")
+            fun thenItShouldReturnC1C2() {
+                assertEquals(
+                        setOf(
+                                Position('C', 1),
+                                Position('C', 2)
+                        ),
+                        pawn.nextMoves()
+                )
+            }
+        }
+    }
 }
