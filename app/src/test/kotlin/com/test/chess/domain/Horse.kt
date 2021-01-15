@@ -10,8 +10,9 @@ class Horse(board: Board) : Piece {
     override fun nextMoves(): Set<Position> {
         return listOfNotNull(
                 current.top()?.top()?.right(),
-                current.right()?.right()?.top()
-
+                current.right()?.right()?.top(),
+                current.top()?.top()?.left(),
+                current.left()?.left()?.top()
         ).toSet()
     }
 }
