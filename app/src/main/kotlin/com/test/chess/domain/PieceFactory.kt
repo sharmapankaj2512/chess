@@ -6,40 +6,40 @@ object PieceFactory {
     fun make(command: String): Piece? {
         return COMMAND.matchEntire(command.toLowerCase())?.let { result ->
             val (pieceType, row, column) = result.destructured
-            return make(pieceType, row, column)
+            return make(pieceType, row[0].toUpperCase(), column.toInt())
         }
     }
 
-    private fun make(pieceType: String, row: String, column: String) =
+    private fun make(pieceType: String, row: Char, column: Int) =
             when (pieceType) {
                 "king" -> {
                     val king = King(Board())
-                    king.placeAt(Position(row[0], column.toInt()))
+                    king.placeAt(Position(row, column))
                     king
                 }
                 "queen" -> {
                     val queen = Queen(Board())
-                    queen.placeAt(Position(row[0], column.toInt()))
+                    queen.placeAt(Position(row, column))
                     queen
                 }
                 "pawn" -> {
                     val pawn = Pawn(Board())
-                    pawn.placeAt(Position(row[0], column.toInt()))
+                    pawn.placeAt(Position(row, column))
                     pawn
                 }
                 "rook" -> {
                     val rook = Rook(Board())
-                    rook.placeAt(Position(row[0], column.toInt()))
+                    rook.placeAt(Position(row, column))
                     rook
                 }
                 "horse" -> {
                     val horse = Horse(Board())
-                    horse.placeAt(Position(row[0], column.toInt()))
+                    horse.placeAt(Position(row, column))
                     horse
                 }
                 "bishop" -> {
                     val bishop = Bishop(Board())
-                    bishop.placeAt(Position(row[0], column.toInt()))
+                    bishop.placeAt(Position(row, column))
                     bishop
                 }
                 else -> null

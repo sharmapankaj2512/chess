@@ -37,6 +37,9 @@ data class Position(val row: Char, val column: Int) {
         return valid(row, column)
     }
 
+    override fun toString(): String {
+        return row.toString() + column.toString()
+    }
     companion object {
         private const val START_ROW = 'A'
         private const val END_ROW = 'H'

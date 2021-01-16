@@ -1,6 +1,9 @@
 ### Run tests
 `make test`
 
+### Run application
+`make run`
+
 ### IDE Configuration
 
 Intellij fix for showing test display names in the test run tab -

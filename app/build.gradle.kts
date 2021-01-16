@@ -28,6 +28,11 @@ application {
     mainClass.set("com.test.chess.AppKt")
 }
 
+tasks.getByName<JavaExec>("run") {
+    standardInput = System.`in`
+    standardOutput = System.`out`
+}
+
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
